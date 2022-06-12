@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HonkaiController;
+use App\Http\Controllers\ValkyrieController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,11 +15,12 @@ use App\Http\Controllers\HonkaiController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login');
 });
 
-Route::get('valkyrie', [HonkaiController::class, 'valkyrie']);
-
-Route::get('dashboard', function () {
-    return view('dashboard');
-});
+Route::get('/valkyrie', [ValkyrieController::Class, 'tampil']);
+Route::get('/valkyrie/tambah', [ValkyrieController::Class, 'tambah']);
+Route::post('/valkyrie/upload', [ValkyrieController::Class, 'upload']);
+Route::get('/valkyrie/edit/{id_valkyrie}', [ValkyrieController::Class, 'edit']);
+Route::put('/valkyrie/update/{id_valkyrie}', [ValkyrieController::Class, 'update']);
+Route::get('/valkyrie/hapus/{id_valkyrie}', [ValkyrieController::Class, 'hapus']);
