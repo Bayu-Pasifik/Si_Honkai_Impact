@@ -14,8 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('tb_valkyrie', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->bigInteger('id_valkyrie')->autoIncrement();
+            $table->string('nama',255);
+            $table->string('rank',255);
+            $table->string('tipe',255);
+            $table->string('role',255);
+            $table->string('foto',255);
+            
         });
     }
 
